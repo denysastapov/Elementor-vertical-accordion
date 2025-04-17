@@ -1,0 +1,94 @@
+.vertical-accordion-widget {
+  display: flex;
+  width: 100%;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: row;
+  border-right: 1px solid #ddd;
+  transition: flex-grow 0.3s ease;
+  min-height: 500px;
+  flex-grow: 0;
+}
+
+.accordion-header {
+  padding: 15px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-content {
+  padding: 3rem;
+  background-color: #ffffff;
+  display: none;
+  width: 100%;
+}
+
+.accordion-item.active {
+  flex-grow: 5;
+}
+
+.accordion-content-body {
+  margin-bottom: 1rem;
+}
+
+.accordion-item.active .accordion-content {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.accordion-icon {
+  display: inline-flex;
+  height: 110px;
+  width: 110px;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--e-global-color-f541cf6);
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+
+.accordion-icon:hover {
+  background-color: var(--e-global-color-f541cf6);
+}
+
+.accordion-icon svg {
+  height: 60px;
+  width: 60px;
+}
+
+.accordion-icon:hover svg {
+  fill: #fff;
+}
+
+.accordion-button {
+  padding: 12px 48px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  align-self: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .vertical-accordion-widget {
+    display: block;
+  }
+  .accordion-item {
+    display: block;
+    min-height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+}
